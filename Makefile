@@ -53,7 +53,7 @@ static: lib/$(TARGET)/lib$(PROJECT).a
 shared: lib/$(TARGET)/lib$(PROJECT).so
 	@echo "Built shared library"
 
-test: lib$(PROJECT)
+test:
 	make -C tests test
 
 format:
