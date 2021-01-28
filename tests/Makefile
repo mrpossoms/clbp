@@ -5,7 +5,10 @@ LINK+=-l$(PROJECT)
 
 TESTS=$(patsubst %.c,bin/%,$(wildcard *.c))
 
-bin:
+../lib/$(TARGET)/lib$(PROJECT).a:
+	$(MAKE) -C .. static
+
+bin: ../lib/$(TARGET)/lib$(PROJECT).a
 	mkdir bin
 
 bin/%: %.c bin
@@ -18,6 +21,4 @@ test: $(TESTS)
 clean:
 	rm -rf bin/
 
-../lib/$(TARGET)/lib$(PROJECT).a:
-	$(MAKE) -C .. static
 
