@@ -9,7 +9,7 @@ TESTS=$(patsubst %.c,bin/%,$(wildcard *.c))
 	$(MAKE) -C .. static
 
 bin: ../lib/$(TARGET)/lib$(PROJECT).a
-	mkdir bin
+	mkdir -p bin
 
 bin/%: %.c bin
 	$(CC) $(CFLAGS) $(LIB) $(INC) $(LIBS) $< -o $@ $(LINK)
