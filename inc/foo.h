@@ -26,6 +26,6 @@
  *
  * @return Sum of parameters i and *j
  */
-float foo(float i, float* j);
+float foo (float i, float* j);
 
 #endif

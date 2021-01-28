@@ -1,4 +1,11 @@
 include vars.mk
+
+
+TESTS+=$(wildcard tests/*.c*)
+SRCS+=$(wildcard src/*.c*)
+HDRS+=$(wildcard inc/*.h)
+
+
 #    ___  _             _     ___              
 #   |   \(_)_ _ ___   _| |_  |   \ ___ _ __ ___
 #   | |) | | '_(_-<  |_   _| | |) / -_) '_ (_-<
@@ -38,7 +45,7 @@ lib/$(TARGET)/lib$(PROJECT).so: $(SRC_OBJS)
 #   |  _/ ' \/ _ \ ' \| / -_|_-<
 #   |_| |_||_\___/_||_|_\___/__/
 #                               
-.PHONEY: docs deps clean libdyn test static
+.PHONEY: docs deps clean libdyn test static format
 
 static: lib/$(TARGET)/lib$(PROJECT).a
 	@echo "Built static library"
@@ -48,6 +55,11 @@ shared: lib/$(TARGET)/lib$(PROJECT).so
 
 test: lib$(PROJECT)
 	make -C tests test
+
+format:
+	clang-format -i $(SRCS)
+	clang-format -i $(HDRS)
+	clang-format -i $(TESTS)
 
 docs:
 	mkdir -p $@

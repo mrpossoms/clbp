@@ -7,8 +7,8 @@
  */
 TEST
 {
-  float j = 1;
-  assert(foo(1, &j) == 2);
-  assert(j == 4);
-  return 0;
+	float j = 1;
+	assert (foo (1, &j) == 2);
+	assert (j == 4);
+	return 0;
 }

@@ -2,10 +2,11 @@
 
 #include <stdio.h>
 
-float foo (float i, float* j)
+float
+foo (float i, float* j)
 {
-  float res = i + *j;
-  *j = res * 2;
+	float res = i + *j;
+	*j = res * 2;
 
-  return res;
+	return res;
 }
