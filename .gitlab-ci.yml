@@ -1,0 +1,17 @@
+test:
+  image: ubuntu
+  before_script:
+    - apt-get clean 
+    - apt-get update -y
+    - apt-get install openssh-client git python3 python3-pip python3-distutils -y
+    - pip3 install gitman
+    - eval $(ssh-agent -s)
+    - echo "$SSH_PRIVATE_KEY" | tr -d '\r' | ssh-add -
+    - mkdir -p ~/.ssh
+    - chmod 700 ~/.ssh
+    - '[[ -f /.dockerenv ]] && echo -e "Host *\n\tStrictHostKeyChecking no\n\n" >> ~/.ssh/config'
+  script:
+    - apt-get update
+    - apt-get install -y gcc build-essential
+    - gitman install
+    - make test
