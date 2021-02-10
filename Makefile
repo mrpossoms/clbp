@@ -20,6 +20,8 @@ obj/$(TARGET): lib/$(TARGET)
 gitman_sources:
 	pip install gitman
 	gitman install
+	# install the pre-commit hook
+	cp .pre-commit .git/hooks
 
 #     ___  _     _        _     ___      _        
 #    / _ \| |__ (_)___ __| |_  | _ \_  _| |___ ___
