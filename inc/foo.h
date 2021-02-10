@@ -3,13 +3,9 @@
  *
  * The example header file for foo
  *
- * Copyright (C) Advanced Space LLC
  * All Rights Reserved
- * Unauthorized copying of any file in this repository via any medium is
- * strictly prohibited. Everything in this repository is proprietary and
- * confidential.
  *
- * Author: Kirk Roerig [kroerig@advancedspace.com]
+ * Author: Kirk Roerig [mr.possoms@gmail.com]
  */
 
 #ifndef __FOO_H__
