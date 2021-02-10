@@ -1,4 +1,5 @@
 # clbp
+![C/C++ CI](https://github.com/mrpossoms/clbp/workflows/C/C++%20CI/badge.svg)
 
 C Library Boilerplate is a starting point for C/C++ library projects and includes a functionally minimal makefile, dependency management tooling config, directory structures, automatic code formatting, and unit testing infrastructure.
 
